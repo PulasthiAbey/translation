@@ -8,7 +8,7 @@ const InputFields = () => {
     <>
       <div className="padding-top" />
       <div className="input-fields">
-        <div className="body-field">
+        <div className="left-field">
           <div className="field-header">Sinhala</div>
           {/* <div className="border"> */}
           <input
@@ -27,7 +27,7 @@ const InputFields = () => {
             <ChangeCircleIcon fontSize="large" />
           </button>
         </div>
-        <div className="body-field">
+        <div className="right-field">
           <div className="field-header">English</div>
           {/* <div className="border"> */}
           <div className="field" id="translated"></div>

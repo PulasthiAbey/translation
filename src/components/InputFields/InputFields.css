@@ -8,11 +8,19 @@
    display: flex;
 }
 
-.body-field{
+.left-field{
     height: 300px;
     width: 500px;
     background-color: darkgray;
     margin-left: 100px;
+    border: 1px #0F0537;
+    border-radius: 30px;
+}
+
+.right-field{
+    height: 300px;
+    width: 500px;
+    background-color: darkgray;
     border: 1px #0F0537;
     border-radius: 30px;
 }
