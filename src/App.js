@@ -1,10 +1,20 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+
+import HomeScreen from "./screens/HomeScreen";
+import ConverterScreen from "./screens/ConverterScreen";
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<HomeScreen />} />
+          <Route path="/convert" element={<ConverterScreen />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
