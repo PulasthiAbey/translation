@@ -1,11 +1,12 @@
 import React from 'react'
+import Header from "../components/HeaderHome/Header";
 
 const HomeScreen = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <Header />
+    </>
+  );
+};
 
 export default HomeScreen
