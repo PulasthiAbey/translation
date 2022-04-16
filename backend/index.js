@@ -10,7 +10,9 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-app.get("/translate", (req, res) => {});
+const translateRoute = require("./routes/translate");
+
+app.use("/translate", translateRoute);
 
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`);
