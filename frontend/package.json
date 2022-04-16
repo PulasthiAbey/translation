@@ -2,6 +2,7 @@
   "name": "translation",
   "version": "1.0.0",
   "private": true,
+  "proxy": "http://localhost:9090/api",
   "homepage": "./",
   "dependencies": {
     "@emotion/react": "^11.8.2",
@@ -12,6 +13,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.26.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.3.0",
@@ -21,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mv build ../backend",
+    "build": "react-scripts build && rm -R ../backend/build && mv build ../backend",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

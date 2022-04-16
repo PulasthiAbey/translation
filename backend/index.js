@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 
 const translateRoute = require("./routes/translate");
 
-app.use("/translate", translateRoute);
+app.use("/api/translate", translateRoute);
 
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`);

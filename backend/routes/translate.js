@@ -35,26 +35,25 @@ const translateText = async (text, targetLanguage) => {
     }
 };
 
-router.post("/", (req, res) => {
-    const text = req.body.text;
+router.post("/", async (req, res) => {
+  const text = req.body.text;
 
-    try {
-        const resDetect = await detectLanguage(text);
-        const resTranslate = await translateText(text, 'si');
+  try {
+    const resDetect = await detectLanguage(text);
+    const resTranslate = await translateText(text, "si");
 
-        res.status(200).json({
-            status: 'SUCCESS',
-            detectLanguage: resDetect,
-            translatedText: resTranslate
-        });
-
-    } catch (error) {
-        res.status(400).json({
-            status: 'ERROR',
-            message: error.message,
-            error: error
-        });
-    }
+    res.status(200).json({
+      status: "SUCCESS",
+      detectLanguage: resDetect,
+      translatedText: resTranslate,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "ERROR",
+      message: error.message,
+      error: error,
+    });
+  }
 });
 
 module.exports = router;
