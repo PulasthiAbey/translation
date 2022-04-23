@@ -35,6 +35,10 @@ const translateText = async (text, targetLanguage) => {
     }
 };
 
+router.get("/", async (req, res) => {
+  res.send("Get Request for Translator");
+});
+
 router.post("/", async (req, res) => {
   const text = req.body.text;
 
