@@ -1,9 +1,23 @@
-.row {
-  display: flex;
-}
-
 .col {
   flex: 2;
   margin-top: 150px;
   color: aqua;
+}
+
+.row{
+  display: flex;
+  flex-direction: 'row';
+}
+
+.img-responsive{
+  width: 500px;
+  height: 300px;
+}
+
+.body-text{
+  align-items: 'center';
+  justify-content: 'center';
+  font-size: 30px;
+  margin-top: 30px;
+  font-weight: bolder;
 }

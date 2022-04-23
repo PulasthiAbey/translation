@@ -23,7 +23,7 @@ const InputFields = () => {
     console.log("Sample Text", text);
 
     axios
-      .post("/translate", requestOptions)
+      .post("http://localhost:9090/api/translate", requestOptions)
       .then((response) => {
         setFetchResponse(response);
         setTranslatedText(fetchResponse.translatedText);
