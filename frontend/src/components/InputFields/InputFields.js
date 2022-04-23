@@ -4,7 +4,7 @@ import axios from "axios";
 
 import "./InputFields.css";
 
-const InputFields = () => {
+const InputFields = async () => {
   const [translatedText, setTranslatedText] = useState("");
   const [fetchResponse, setFetchResponse] = useState({});
   const [text, setText] = useState("");
@@ -14,7 +14,7 @@ const InputFields = () => {
     console.log(text);
   };
 
-  const translate = () => {
+  const translateValues = async () => {
     const requestOptions = {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: text }),
@@ -22,17 +22,15 @@ const InputFields = () => {
 
     console.log("Sample Text", text);
 
-    axios
-      .post("/translate", requestOptions)
-      .then((response) => {
-        setFetchResponse(response);
-        setTranslatedText(fetchResponse.translatedText);
-      })
-      .catch((error) => {
-        alert(
-          `Error Occurred while trying to translate ${error.message}\nError ==> ${error}`
-        );
-      });
+    const responseAxios = await axios.post(
+      "http://localhost:9090/api/translate",
+      requestOptions
+    ).promise;
+
+    if (responseAxios !== "") {
+      setFetchResponse(responseAxios);
+      console.log(fetchResponse);
+    }
   };
 
   return (
@@ -52,7 +50,11 @@ const InputFields = () => {
           {/* </div> */}
         </div>
         <div className="icon-middle">
-          <button type="submit" className="button" onClick={translate()}>
+          <button
+            type="submit"
+            className="button"
+            onClick={async () => await translateValues()}
+          >
             <ChangeCircleIcon fontSize="large" />
           </button>
         </div>

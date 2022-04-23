@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<HomeScreen />} />
+        <Route index path="/" element={<HomeScreen />} />
         <Route path="/convert" element={<ConverterScreen />} />
       </Routes>
     </BrowserRouter>
