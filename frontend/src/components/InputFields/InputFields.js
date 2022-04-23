@@ -9,12 +9,12 @@ const InputFields = () => {
   const [fetchResponse, setFetchResponse] = useState({});
   const [text, setText] = useState("");
 
-  const settingUpValue = (text) => {
+  const settingUpValue = async (text) => {
     setText(text);
     console.log(text);
   };
 
-  const translate = () => {
+  const translate = async () => {
     const requestOptions = {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: text }),
@@ -22,17 +22,27 @@ const InputFields = () => {
 
     console.log("Sample Text", text);
 
-    axios
-      .post("http://localhost:9090/api/translate", requestOptions)
-      .then((response) => {
-        setFetchResponse(response);
-        setTranslatedText(fetchResponse.translatedText);
-      })
-      .catch((error) => {
-        alert(
-          `Error Occurred while trying to translate ${error.message}\nError ==> ${error}`
-        );
-      });
+    // axios
+    //   .post("http://localhost:9090/api/translate", requestOptions)
+    //   .then((response) => {
+    //     setFetchResponse(response);
+    //     setTranslatedText(fetchResponse.translatedText);
+    //   })
+    //   .catch((error) => {
+    //     console.log(
+    //       `Error Occurred while trying to translate ${error.message}\nError ==> ${error}`
+    //     );
+    //   });
+
+    const responseType = await axios.post(
+      "http://localhost:9090/api/translate",
+      requestOptions
+    ).promise;
+
+    console.log(responseType);
+
+    if (responseType !== "") {
+    }
   };
 
   return (
