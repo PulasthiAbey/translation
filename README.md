@@ -3,7 +3,9 @@
 ## How to Run
 
 1. Move into backend folder and run `npm install`
-2. Run `npm start` and check the link [http://localhost:9090/](http://localhost:9090/)
+2. Run `npm start`.
+3. Open a diffrent terminal and move into frontend folder and run `npm install`
+4. Then run `npm start`
 
 ## Front End
 
