@@ -5,7 +5,11 @@ const app = express();
 
 const PORT = process.env.PORT || 9090;
 
-app.use(cors);
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://localhost:9090/"); // update to match the domain you will make the request from
   res.header(
