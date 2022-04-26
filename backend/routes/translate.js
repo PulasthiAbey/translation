@@ -35,6 +35,10 @@ const translateText = async (text, targetLanguage) => {
     }
 };
 
+router.get("/", async (req, res) => {
+  res.send("Get Request for Translator");
+});
+
 router.post("/", async (req, res) => {
   const text = req.body.text;
 
@@ -48,6 +52,7 @@ router.post("/", async (req, res) => {
       translatedText: resTranslate,
     });
   } catch (error) {
+    console.log(error);
     res.status(400).json({
       status: "ERROR",
       message: error.message,

@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./Body.css";
 
 const Body = () => {
@@ -9,7 +10,7 @@ const Body = () => {
           <div className="col">
             <img
               className="img-responsive"
-              src={require("../../assets/images/homeImage.png")}
+              src={require("../../assets/homeImage.png")}
               alt="bodyImage"
             />
           </div>

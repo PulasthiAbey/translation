@@ -1,9 +1,23 @@
 .row {
+  margin-top: 200px;
   display: flex;
 }
 
 .col {
   flex: 2;
-  margin-top: 150px;
+  margin-top: 200px;
   color: aqua;
+}
+
+.img-responsive{
+  margin-top: 200px;
+  width: 700px;
+  height: 500px;
+}
+
+.body-text{
+  margin-top: 200px;
+  align-items: flex-end;
+  text-align: right;
+  font-size: 70px;
 }
